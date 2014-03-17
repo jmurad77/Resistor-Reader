@@ -1,0 +1,42 @@
+\documentclass[12pt]{article}
+
+\title{Maintenance Manual}
+\author{Resistor Reader Project, CSE 455}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+This is the Maintenance Manual for the ``Resistor Reader'' Android application. This manual exists to describe what has been done, and what needs to be done to improve and maintain the application. It is split into two sections, ``Current Status, and ``Future Work''.
+
+\section{Current Status}
+
+As it currently stands, the application is able to successfully take a picture of a resistor, and return the resistance. It utilizes the Java version of the OpenCV library, successfully linked and compiling.
+
+\section{Future Work}
+
+Future work should be done in the following two areas:
+
+\begin{enumerate}
+	\item Code refactoring
+	\item Improve color scanning robustness
+\end{enumerate}
+
+\subsection{Code Refactoring}
+
+As it currently stands, the majority of the application code is kept in a single class. While this is the simplest possible structure, it is not particularly flexible or scalable, and the application would be well served by increased modularity. Most importantly, splitting the resistor reading logic into its own class would make it easier to modify (through specially chosen parameter values kept as private variables) and improve.
+
+\subsection{Improving Color Scanning Robustness}
+
+Need to make a more robust color detection system. The next team will require a very thorough understanding of Open CV in order to implement the color detection system properly. The program also needs a more robust cropping mechanism. This is to minimize the area the color detection needs to process. 
+
+By and large the most important part of the program is the color values that will be retrieved from the photo. Without these values, the application cannot accurately calculate the resistance value of the given resistor.
+
+The color conversion again is dependent on the color values taken from the Open CV color detection systems.
+
+The calculation of the resistance requires minimal work at this stage of development. As stated above the most crucial part of this application are the values given by the color detection system.
+
+\end{document}
